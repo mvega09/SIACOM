@@ -237,22 +237,23 @@ def actualizar_estado_cirugia(cirugia_id: int, estado: str):
         cursor.close()
         conn.close()
 
-@app.get("/contactos/{paciente_id}")
-def get_contactos_paciente(paciente_id: int):
+@app.get("/contactos")
+def get_contactos(limit: int = 50, offset: int = 0):
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
     
     try:
         cursor.execute("""
-            SELECT * FROM contactos 
-            WHERE paciente_id = %s
-            ORDER BY es_contacto_principal DESC, nombre
-        """, (paciente_id,))
+            SELECT * FROM contactos
+            ORDER BY id ASC
+            LIMIT %s OFFSET %s
+        """, (limit, offset))
         contactos = cursor.fetchall()
         return contactos
     finally:
         cursor.close()
         conn.close()
+
 
 @app.get("/signos-vitales/{paciente_id}")
 def get_signos_vitales(paciente_id: int):

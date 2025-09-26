@@ -70,38 +70,28 @@ cp .env.example .env
 ### 4. Configurar Frontend
 ```bash
 # Navegar al directorio frontend
+
 cd frontend
 
 # Instalar dependencias
-npm install
-
-# Instalar Expo CLI globalmente (si no está instalado)
-npm install -g @expo/cli
-```
+npm install axios react-router-dom
+npm install -D tailwindcss postcss autoprefixer
 
 ### 5. Ejecutar la Aplicación
+npm run dev
+
 
 #### Backend
 ```bash
 cd backend
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 #### Frontend
 ```bash
 cd frontend
 # Para desarrollo web
-expo start --web
-npx expo start --web
-
-# Para dispositivo Android
-expo start --android
-
-# Para dispositivo iOS
-expo start --ios
-```
-
-## Configuración Adicional
+npm run dev
 
 ### Variables de Entorno (.env)
 ```env

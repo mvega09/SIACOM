@@ -62,6 +62,11 @@ source venv/bin/activate
 # Instalar dependencias
 pip install -r requirements.txt
 
+#post instalar las dependencias ejecutar la secuencia de los siguientes comandos, lo que hace es mostrar las contraseñas hasheadas de los usuarios
+python verify_db_hashes.py
+python rehash_passwords.py
+python verify_db_hashes.py
+
 # Configurar variables de entorno
 cp .env.example .env
 # Editar .env con tus configuraciones de base de datos

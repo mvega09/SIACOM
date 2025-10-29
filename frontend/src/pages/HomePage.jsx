@@ -110,7 +110,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="mt-6">
-                <button className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white text-sm font-medium rounded-lg group-hover:from-blue-700 group-hover:to-green-700 transition-all duration-200 shadow-md hover:shadow-lg">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition">
                   Acceder como Familiar
                   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
